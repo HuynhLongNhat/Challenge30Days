@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+:root{
+    --success-color :rgb(0 ,128 , 0);
+    --warning-color :rgb(255 , 165 ,0 );
+    --error-color :rgb(255 , 0 ,0);
+
+    --success-light :rgba(0 ,128, 0 ,0.4);
+    --warning-light :rgba(255, 165, 0, 0.4);
+    --error-light :rgba(255 ,0, 0 ,0.4);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #ccc;
+
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.btn.success {
+    background-color: var(--success-color);
+}
+
+.btn.warning {
+    background-color: var(--warning-color);
+}
+
+.btn.error {
+    background-color: var(--error-color);
+}
+
+#toasts {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.toast {
+   color: #fff;
+    padding: 15px 20px;
+    border-radius: 4px;
+    font-size: 20px;
+    border: none;  
+    overflow: hidden;
+    animation: slide_show 2s ease forwards;
+    margin-bottom: 10px;
+   
+}
+
+.toast i {
+    padding-right: 5px ;
+}
+
+.toast .countdown {
+    background-color: var(--success-color);
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: countdown 3s ease forwards;
+}
+
+.toast.success{
+    border-left: 6px solid var(--success-color);
+    background-color: var(--success-light);
+}
+
+.toast.warning{
+     border-left: 6px solid var(--warning-color);
+    background-color: var(--warning-light);
+}
+
+.toast.error{
+     border-left: 6px solid var(--error-color);
+    background-color: var(--error-light);
+}
+
+.toast.success .countdown {
+    background-color : var(--success-color);
+}
+
+.toast.warning .countdown {
+    background-color : var(--warning-color);
+}
+
+.toast.error .countdown {
+    background-color : var(--error-color);
+}
+
+
+@keyframes countdown{
+    0% {
+        width: 100%;
+    }
+    100%{
+         width: 0%;
+    }
+}
+
+@keyframes slide_show{
+    0%{
+         transform: translateX(100%);
+    }
+    25%{
+          transform: translateX(-10%);
+    }
+    50%{
+         transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+   
+}
+
+@keyframes slide_hide{
+    0%{
+         transform: translateX(-10%);
+    }
+    25%{
+          transform: translateX(0%);
+    }
+    50%{
+         transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(200%);
+    }
+   
+}
