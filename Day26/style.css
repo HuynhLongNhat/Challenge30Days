@@ -1,0 +1,104 @@
+:root {
+    --primary-color :rgb(40, 75,40) ;
+
+
+}
+
+
+*{
+    padding :0;
+    margin  :0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+   
+}
+
+body { 
+    background: linear-gradient(145deg , green , white 50%); 
+     width:100vw;
+    height:100vh;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.between {
+   display: flex;
+   justify-content: center;
+}
+
+.form-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0  5px rgba(0 ,0 , 0 ,  0.4);
+    padding: 0 10px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.form-input input{
+    border : none;
+    outline:none;
+    padding: 10px;
+    margin-right : 10px;
+    font-size: 20px;
+}
+
+.form-input .show-eye {
+    animation: sharingan linear 0.25s infinite;
+    
+}
+
+button {
+    margin-left: 20px;
+    background: rgb(40, 75,40);
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px ;
+    color: #fff;
+}
+
+
+.validator {
+    background: var(--primary-color);
+    color : #fff;
+    margin-top:30px ;
+    border-radius: 5px;
+    box-shadow: 0 0  5px rgba(0 ,0 , 0 ,  0.4);
+    padding:10px;
+}
+
+.validator p {
+    margin: 5px;
+}
+
+.validator p:before {
+    content:'\f00d';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding:10px;
+}
+
+.validator p.valid {
+    color : #ccc
+}
+
+.validator p.valid::before {
+    content:'\f00c';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding:10px;
+    color : #ccc;
+}
+
+@keyframes  sharingan {
+   0% {
+     transform:rotate(0);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
+}
